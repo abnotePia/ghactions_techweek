@@ -30,11 +30,15 @@ jobs:
 
       - name: Action2
         run:
-        echo ${{ github.repository }} nombre repo
+          echo ${{ github.repository }} nombre repo
        
-     - name: Upload Built WebApp ⬆
+     - name: Action3
         uses: actions/upload-artifact@v1
         with:
           name: ${{ env.ARTIFACT_NAME }}
           path: ${{ env.PACKAGE_PATH }}
+
+      -name: Action4
+      run:
+         ls ${{ github.workspace }}
 
